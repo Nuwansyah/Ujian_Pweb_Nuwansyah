@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mainan_dungeon2an</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<body>
+    <h1 id="judul1">Hello adventurer</h1>
+    <div id="preGameMenu">
+        
+        <label for="playerName">SILAKAN ISI NAMA ANDA : </label>
+        <input type="text" id="playerName" required>
+        <button onclick="startGame()">Play</button>
+    </div>
+
+    
+    <div id="Highscore">
+        <div id="highScores">
+        <h2>High Scores</h2>
+        <ul id="highScoresList"></ul>
+        <button onclick="clearHighScores()">Clear High Scores</button>
+    </div>
+
+
+    <div id="mainMenu">
+        
+    </div>
+
+    <div id="profile" style="display: none;">
+        <h1>Anda sedang di gubuk</h1>
+        <p>Name: <span id="profilePlayerName"></span></p>
+        <p>Health: <span id="health"></span></p>
+        <p>Attack: <span id="attack"></span></p>
+        <p>Defense: <span id="defense"></span></p>
+        <p>XP: <span id="xp"></span></p>
+        <p>Money: $<span id="money"></span></p>
+        <button onclick="openInventory()">Inventory</button>
+        <button onclick="openShop()">Shop</button>
+        <button onclick="bukapergikehutan()">Hunt</button>
+    </div>
+
+    <div id="inventory" style="display: none;">
+        <h1>Equipment</h1>
+        <p>Tangan: <span id="Etangan"></span></p>
+        <p>Kepala: <span id="Ekepala"></span></p>
+        <p>Badan: <span id="Ebadan"></span></p>
+        <p>kaki: <span id="Ekaki"></span></p>
+        
+        <h1>Inventory</h1>
+        <ul id="inventoryList"></ul>
+        <button onclick="closeInventory()">Close Inventory</button>
+    </div>
+
+    <div id="shop" style="display: none;">
+        <h1>Shop</h1>
+        <p>Money: $<span id="shopMoney"></span></p>
+        <ul id="shopItems">
+            <li><button id="sword1" onclick="buySword(10, 5, 1)">Wooden Sword ($10, Damage: 5)</button></li>
+            <li><button id="sword2" onclick="buySword(20, 10, 2)">Iron Sword ($20, Damage: 10)</button></li>
+            <li><button id="sword3" onclick="buySword(50, 15, 3)">Legendary Sword ($50, Damage: 15)</button></li>
+            <br></br>
+            <li><button id="helm1" onclick="buyhelm(4, 2, 1)">Leather Helmet ($4, Defense: 2)</button></li>
+            <li><button id="helm2" onclick="buyhelm(9, 3, 2)">Legendary Helmet ($9, Defense: 3)</button></li>
+            <li><button id="helm3" onclick="buyhelm(15, 4, 3)">Legendary Helmet ($15, Defense: 4)</button></li>
+            <br></br>
+            <li><button id="armor1" onclick="buyarmor(7, 3, 1)">Leather Armor ($7, Defense: 3)</button></li>
+            <li><button id="armor2" onclick="buyarmor(9, 4, 2)">Iron Armor ($9, Defense: 4)</button></li>
+            <li><button id="armor3" onclick="buyarmor(15, 6, 3)">Legendary Armor ($15, Defense: 6)</button></li>
+            <br></br>
+            <li><button id="boots1" onclick="buyboots(6, 2, 1)">Leather Boots ($6, Defense: 2)</button></li>
+            <li><button id="boots2" onclick="buyboots(8, 3, 2)">Iron Boots ($8, Defense: 3)</button></li>
+            <li><button id="boots3" onclick="buyboots(13, 4, 3)">Legendary Boots ($15, Defense: 4)</button></li>
+        </ul>
+        <button onclick="closeShop()">Close Shop</button>
+    </div>
+
+    <div id="forest" style="display: none;">
+        <h1>Hutan</h1>
+        <p>Health: <span id="health1"></span></p>
+        <p>Attack: <span id="attack1"></span></p>
+        <p>Defense: <span id="defense1"></span></p>
+        <p>XP: <span id="xp1"></span></p>
+        <p><span id="hasilhutan"></p>
+        <button id="btn_telusuri" onclick="eventhutan()">Telusuri</button>
+        <button onclick="kembalikerumah()">Kembali ke rumah</button>
+    </div>
+
+    <div id="battleground" style="display: none;">
+        <h1>Battle</h1>
+        <p>Player Stats__________MonsterStats</p>
+        <p>Monster Type : <span id="namamonster" style="color:red;"></span></p>
+        <p>Health: <span id="health2" style="color:DodgerBlue;"></span> __________ Health: <span id="mhealth1" style="color:red;"></span></p>
+        <p>Attack: <span id="attack2" style="color:DodgerBlue;"></span> __________ Attack: <span id="mattack1" style="color:red;"></span></p>
+        <p>Defense: <span id="defense2" style="color:DodgerBlue";></span> __________ Defense: <span id="mdefense1"style="color:red;"></span></p>
+        <br></br>
+        <p span id="notifikasibattle"></span>></span></p>
+        <br></br>
+        <button id = "btn_serang" onclick="serangmusuh()">Serang</button>
+        <button id = "btn_lari" onclick="kaburlah()">Mundur</button>
+    </div>
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
